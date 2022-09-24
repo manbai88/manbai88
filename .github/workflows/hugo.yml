@@ -28,7 +28,7 @@ defaults:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-16.04
+    runs-on: macos-latest
     env:
       HUGO_VERSION: 0.102.3
     steps:
