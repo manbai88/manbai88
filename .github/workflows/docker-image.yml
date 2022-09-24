@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Build 
 
 on:
   push:
@@ -6,8 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+workflows_dispatch:
+
 jobs:
-  build:
+
+  build && deploy: /.
+
      runs-on: windows-latest
 
     steps:
