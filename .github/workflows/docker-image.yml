@@ -10,11 +10,13 @@ workflows_dispatch:
 
 jobs:
 
-  build && deploy: /.
+  build && deploy:
 
      runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout 
+        uses: actions/checkout@v3
+
     - name: Build the Docker image
-      run: docker build --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build -s --tag my-image-name:$(date +%s)
