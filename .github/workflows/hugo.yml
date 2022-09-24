@@ -45,7 +45,6 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Build with Hugo
         env:
-          ---?
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
