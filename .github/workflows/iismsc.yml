@@ -64,14 +64,15 @@ jobs:
         #  tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
         #  file: ./Dockerfile
 
-  deploy:
-    permissions: read 
-      contents: fakeroot
-    runs-on: ubuntu-latest
+ # deploy:
+    permissions:
+      contents: 
+  #  runs-on: ubuntu-latest
     needs: |
     environment: test
-      name: 'Development'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+   #   name: 'Development'
+   ...///..   url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+====>
 
     steps:
       - name: Lowercase the repo name and username
