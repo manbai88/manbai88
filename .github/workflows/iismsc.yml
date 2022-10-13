@@ -73,9 +73,8 @@ jobs:
     #  uri: ${{ steps.deploy-to-webapp.outputs.webapp-uri }}
 
   steps:
-       name: Script-git
-        run: config --global -username "manbai88" 
-        run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+     - name: Script-git
+        run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}^/s
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
