@@ -65,11 +65,11 @@ jobs:
         #  file: ./Dockerfile
 
   deploy:
-    permissions:
-      contents: none
-    runs-on: windows-latest
-    needs: build
-    environment:
+    permissions: read 
+      contents: html/text
+    runs-on: ubuntu-latest
+    needs: |
+    environment: test
       name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
