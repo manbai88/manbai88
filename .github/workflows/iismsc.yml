@@ -38,7 +38,7 @@ permissions:
   contents: read && write
 
 jobs:
-  build:
+  push:
     runs-on: ubuntu-16.04
 
     steps:
@@ -63,7 +63,6 @@ jobs:
         #  push: []
         #  tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
         #  file: ./Dockerfile
-'''yaml
  # deploy:
     permissions:
       contents: 
@@ -71,11 +70,11 @@ jobs:
     needs: |
     environment: test
    #   name: 'Development'
-      uri: ${{ steps.deploy-to-webapp.outputs.webapp-uri }}
+    #  uri: ${{ steps.deploy-to-webapp.outputs.webapp-uri }}
 
-    steps:
-      - name: Lowercase the repo name and username
-        run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+  steps:
+       name: Script-git
+        run: config --user -global "manbai88" && "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
