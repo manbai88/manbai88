@@ -75,9 +75,9 @@ jobs:
 job:
 deploy:
         - name: Deploy to Azure Web Apps
-            id: deploy-to-webapps
-        uses: azure/webapps-deploy@v2
+            id: deploy-to-web-app
+        uses: azure/webapp-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPPS_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPPS_PUBLISH_PROFILE }}
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: 'ghcr.io/${{ env.REPO }}:${{ github.sha1 }}'
